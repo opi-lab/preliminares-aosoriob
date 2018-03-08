@@ -11,10 +11,13 @@ Deberán subir un archivo ``README.md`` (pueden usar este para iniciar) en dónd
 
 Ejemplo de la estructura del repositorio a subir
 
-	preliminares-JuanPerez/
+	preliminares-Alexander Osorio/
 	.
 	├── README.md
-	├── ch01-ex1.py
-	├── ch01-ex2.py
+	├── ch01-ex1.py - son los ejemplos del libro para explorar la logica
+	├── ch01-ex2.py - son los ejemplos del libro para explorar la logica
+	├── ch1-ex1.py - contienen los ejercicios propuestos.
 	├── data
-	│   ├── image.jpg
+	│   ├── image2.jpg
+	    ├── empire.jpg
+	    Otras son usadas desde la libreria scipy que vienen incorporadas.
