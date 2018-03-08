@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 23 05:46:29 2018
+
+@author: alexanderosorio
+"""
+
+from PIL import Image
+from numpy import *
+from scipy.ndimage import filters
+from scipy import misc
+import matplotlib.pyplot as plt
+im = array(Image.open('lena.png').convert('L'))
+
+l = misc.face()
+misc.imsave('lena.png', l)
+asciende=misc.ascent() #usando galeria que viene en scipy
+plt.imshow(asciende)
+#print(l)
+# Sobel derivative filters
+imx = zeros(asciende.shape)
+ 
+filters.sobel(asciende,1,imx) #aplicando filtro sobel sobre la
+imy = zeros(asciende.shape) 
+filters.sobel(asciende,0,imy)
+
+sigma = 2 # standard deviation imx = zeros(im.shape)
+filters.gaussian_filter(asciende, (sigma,sigma), (0,1), imx)
+imy = zeros(asciende.shape)
+filters.gaussian_filter(asciende, (sigma,sigma), (1,0), imy)
+#plt.imshow(imx)
+
+
+plt.imshow(imx)
+plt.title('Gaussian sobre X')
+plt.contour(imy, origin='image')
+plt.imshow(imy)
+
+plt.title('Gaussian sobre Y')
